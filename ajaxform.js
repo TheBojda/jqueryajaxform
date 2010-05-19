@@ -29,7 +29,9 @@ function _ajaxform_hiddenFrameLoaded() {
 		for(i=0; i<_ajaxform_targets.length; i++) {
 			$('#' + _ajaxform_targets[i]).html($('#_ajaxform_hidden_frame').contents().find('#' + _ajaxform_targets[i]).html());
 		}
-		ajaxform_init();
+		try {
+			ajaxform_init();
+		} catch(e) {}
 		_reinit_ajaxform();
 	}
 }			
