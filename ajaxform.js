@@ -16,9 +16,10 @@ function _reinit_ajaxform() {
 
 $(document).ready(function() {
 	$('body').append("<iframe id=\"_ajaxform_hidden_frame\" name=\"_ajaxform_hidden_frame\" style=\"display: none;\" onload=\"_ajaxform_hiddenFrameLoaded();\"></iframe>");
-	//$('body').append("<iframe id=\"_ajaxform_hidden_frame\" name=\"_ajaxform_hidden_frame\" onload=\"_ajaxform_hiddenFrameLoaded();\"></iframe>");
 	if(!_is_ajaxform_enabled()) {
-		ajaxform_init();
+		try {
+			ajaxform_init();
+		} catch(e) {}
 		_reinit_ajaxform();
 	}
 });
@@ -27,7 +28,6 @@ function _ajaxform_hiddenFrameLoaded() {
 	if(_ajaxform_targets) {
 		for(i=0; i<_ajaxform_targets.length; i++) {
 			$('#' + _ajaxform_targets[i]).html($('#_ajaxform_hidden_frame').contents().find('#' + _ajaxform_targets[i]).html());
-			//alert('refresh: ' + _ajaxform_targets[i]);
 		}
 		ajaxform_init();
 		_reinit_ajaxform();
