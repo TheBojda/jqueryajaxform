@@ -1,8 +1,8 @@
 Simple, small (1.3K) ajax form implementation based on jQuery. 
 
-*Usage:* Simply add ajaxform class, and a hidden input with "ajaxform_refresh" name which contains the ids of elements have to be refreshed. After the form submit, only the given fields will be refreshed, instead of the whole page. You don't have to change anything on the server side, but it is possible to give back only the referenced parts of the result to reduce the bandwidth usage, and usage of server resources.  
+**Usage:** Simply add ajaxform class, and a hidden input with "ajaxform_refresh" name which contains the ids of elements have to be refreshed. After the form submit, only the given fields will be refreshed, instead of the whole page. You don't have to change anything on the server side, but it is possible to give back only the referenced parts of the result to reduce the bandwidth usage, and usage of server resources.  
 
-*How dose it work:* The ajaxform utility is a small script based on jQuery which search the forms with ajaxform classes, and changes the target of these to a hidden iframe. After the form submit the script will copy back the given elements to the original HTML. This method prevents the ugly page refreshes, and makes easier to do some magic, like change a simple text part to textarea, or build dynamic ajax trees and tables without javascript components or special server codes.  
+**How dose it work:** The ajaxform utility is a small script based on jQuery which search the forms with ajaxform classes, and changes the target of these to a hidden iframe. After the form submit the script will copy back the given elements to the original HTML. This method prevents the ugly page refreshes, and makes easier to do some magic, like change a simple text part to textarea, or build dynamic ajax trees and tables without javascript components or special server codes.  
 
 Example:
 
